@@ -1,5 +1,6 @@
-pymobiledevice3
-bpylist2
-rich
-requests
-click
+pymobiledevice3==6.2.0
+construct-typing==0.7.0
+bpylist2==4.1.1
+rich==15.0.0
+requests==2.34.2
+click==8.5.0
