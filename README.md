@@ -1,6 +1,8 @@
 This fork adds iOS 14 support
 
-Only tested on one device, running iOS 14.0 (tether booted via turdus_merula)
+Tested on:
+- iPhone 6S running iOS 14.0 (tether booted via turdus_merula)
+- A different iPhone 6S running iOS 14.6
 
 # Original README:
 
