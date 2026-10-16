@@ -9,10 +9,13 @@ from . import backup
 from .backup import _FileMode as FileMode
 
 def perform_restore(backup: backup.Backup, reboot: bool = False):
+    lockdown = create_using_usbmux()
+    if getattr(backup, "lockdown", None) is None:
+        backup.lockdown = lockdown.get_value()
+
     with TemporaryDirectory() as backup_dir:
         backup.write_to_directory(Path(backup_dir))
-            
-        lockdown = create_using_usbmux()
+
         with Mobilebackup2Service(lockdown) as mb:
             mb.restore(backup_dir, system=True, reboot=False, copy=False, source=".")
 
